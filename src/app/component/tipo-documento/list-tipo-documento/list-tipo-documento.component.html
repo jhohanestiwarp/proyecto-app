@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">
+
+   <a  class="btn btn-success" routerLink="/add-tipo_documento/">Agregar nuevo tipo_documento</a>
+  </div>
+  <div class="card-body">
+    <h2>Lista tipo_documentos</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>tipo_documento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tipo_documento of tipo_documentos; let iControl=index">
+          <td>{{tipo_documento.id_tipo_documento}}</td>
+          <td>{{tipo_documento.tipo_documento}}</td>
+          <td>
+            <a  class="btn btn-info" routerLink="/edit-tipo_documento/{{tipo_documento.id_tipo_documento}}">Editar</a>
+            <a  class="btn btn-danger" (click)=" deletetipo_documento(tipo_documento.id_tipo_documento,iControl)" role="button">Borrar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>

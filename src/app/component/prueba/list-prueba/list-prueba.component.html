@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">
+  
+     <a  class="btn btn-success" routerLink="/add-prueba/">Agregar nueva Prueba</a>
+    </div>
+    <div class="card-body">
+      <h2>Lista Prueba</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Prueba</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prueba of Prueba; let iControl=index">
+            <td>{{prueba.id_prueba}}</td>
+            <td>{{prueba.prueba}}</td>
+            <td>
+              <a  class="btn btn-info" routerLink="/edit-prueba/{{prueba.id_prueba}}">Editar</a>
+              <a  class="btn btn-danger" (click)=" deletePrueba(prueba.id_prueba,iControl)" role="button">Borrar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  </div>
+  
