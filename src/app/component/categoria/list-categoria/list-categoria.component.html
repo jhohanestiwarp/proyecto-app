@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">
+  
+     <a  class="btn btn-success" routerLink="/add-categoria/">Agregar nueva categoria</a>
+    </div>
+    <div class="card-body">
+      <h2>Lista categoria</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>CODIGO</th>
+            <th>categoria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let categoria of categorias; let iControl=index">
+            <td>{{categoria.id_categoria}}</td>
+            <td>{{categoria.categoria_documento}}</td>
+            <td>
+              <a  class="btn btn-info" routerLink="/edit-categoria/{{categoria.id_categoria}}">Editar</a>
+              <a  class="btn btn-danger" (click)=" deletecategoria(categoria.id_categoria,iControl)" role="button">Borrar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  </div>
+  

@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header">
+  
+     <a  class="btn btn-success" routerLink="/add-evidencia/">Agregar nuevo evidencia</a>
+    </div>
+    <div class="card-body">
+      <h2>Lista evidencia</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Año</th>
+            <th>Codigo de la persona</th>
+            <th>Codigo de rol </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let evidencia of evidencias; let iControl=index">
+            <td>{{evidencia.id_evidencia}}</td>
+            <td>{{evidencia.nombre}}</td>
+            <td>{{evidencia.descripcion}}</td>
+            <td>{{evidencia.ruta_almacenamiento}}</td>
+            <td>{{evidencia.fecha_cargue}}</td>
+            <td>{{evidencia.estado}}</td>
+            <td>{{evidencia.id_actividades_contrato}}</td>
+            <td>{{evidencia.id_prueba}}</td>
+            <td>{{evidencia.id_persona_carga}}</td>
+            <td>
+               <a  class="btn btn-info" routerLink="/edit-evidencia/{{evidencia.id_evidencia}}">Editar</a>
+              <a  class="btn btn-danger" (click)=" deleteevidencia(evidencia.id_evidencia,iControl)" role="button">Borrar</a> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  </div>
+  

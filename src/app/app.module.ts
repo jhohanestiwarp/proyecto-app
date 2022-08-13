@@ -19,6 +19,53 @@ import {Addtipo_documentoComponent  } from './component/tipo-documento/add-tipo-
 import { Edittipo_documentoComponent } from './component/tipo-documento/edit-tipo-documento/edit-tipo-documento.component';
 import { Listtipo_documentoComponent } from './component/tipo-documento/list-tipo-documento/list-tipo-documento.component';
 
+//secretaria
+import { AddsecretariaComponent } from './component/secretaria/add-secretaria/add-secretaria.component';
+import { EditsecretariaComponent } from './component/secretaria/edit-secretaria/edit-secretaria.component';
+import { ListsecretariaComponent } from './component/secretaria/list-secretaria/list-secretaria.component';
+
+//oficina
+import { AddoficinaComponent } from './component/oficina/add-oficina/add-oficina.component';
+import { EditoficinaComponent } from './component/oficina/edit-oficina/edit-oficina.component';
+import { ListoficinaComponent } from './component/oficina/list-oficina/list-oficina.component';
+//permisos
+import { AddpermisosComponent } from './component/perimisos/add-permisos/add-permisos.component';
+import { EditpermisosComponent } from './component/perimisos/edit-permisos/edit-permisos.component';
+import { ListpermisosComponent } from './component/perimisos/list-permisos/list-permisos.component';
+
+//funcionario
+import { AddfuncionarioComponent } from './component/funcionario/add-funcionario/add-funcionario.component';
+import { EditfuncionarioComponent } from './component/funcionario/edit-funcionario/edit-funcionario.component';
+import { ListfuncionarioComponent } from './component/funcionario/list-funcionario/list-funcionario.component';
+
+//categoria
+import { AddcategoriaComponent } from './component/categoria/add-categoria/add-categoria.component';
+import { EditcategoriaComponent } from './component/categoria/edit-categoria/edit-categoria.component';
+import { ListcategoriaComponent } from './component/categoria/list-categoria/list-categoria.component';
+
+
+//contratos
+import { AddContratosComponent } from './component/contratos/add-contratos/add-contratos.component';
+import { EditcontratosComponent } from './component/contratos/edit-contratos/edit-contratos.component';
+import {  ListcontratosComponent } from './component/contratos/list-contratos/list-contratos.component';
+
+//actividades_contrato
+import { Addactividades_contratoComponent } from './component/actividades_contrato/add-actividades-contrato/add-actividades-contrato.component';
+import {Editactividades_contratoComponent  } from './component/actividades_contrato/edit-actividades-contrato/edit-actividades-contrato.component';
+import {Listactividades_contratoComponent  } from './component/actividades_contrato/list-actividades-contrato/list-actividades-contrato.component';
+
+//menu
+import { PrincipalMenuComponent } from './component/menu/principal-menu/principal-menu.component';
+
+//evidencia
+import { AddEvidenciaComponent } from './component/evidencia/add-evidencia/add-evidencia.component';
+import { EditevidenciaComponent } from './component/evidencia/edit-evidencia/edit-evidencia.component';
+import { ListevidenciaComponent } from './component/evidencia/list-evidencia/list-evidencia.component';
+import { AddPersonaComponent } from './component/persona/add-persona/add-persona.component';
+import { EditPersonaComponent } from './component/persona/edit-persona/edit-persona.component';
+import { ListPersonaComponent } from './component/persona/list-persona/list-persona.component';
+
+
 
 @NgModule({
   declarations: [
@@ -35,8 +82,53 @@ import { Listtipo_documentoComponent } from './component/tipo-documento/list-tip
     //Tipo-documento
     Addtipo_documentoComponent,
     Edittipo_documentoComponent,
-    Listtipo_documentoComponent
+    Listtipo_documentoComponent,
+    //secretaria
+    AddsecretariaComponent,
+    EditsecretariaComponent,
+    ListsecretariaComponent,
+    //oficina
+    AddoficinaComponent,
+    EditoficinaComponent,
+    ListoficinaComponent,
+    //permisos
+    AddpermisosComponent,
+    EditpermisosComponent,
+    ListpermisosComponent,
+    
+    //funcionario
+    AddfuncionarioComponent,
+    EditfuncionarioComponent,
+    ListfuncionarioComponent,
 
+    //categoria
+    AddcategoriaComponent,
+    EditcategoriaComponent,
+    ListcategoriaComponent,
+    
+    //contratos
+    AddContratosComponent,
+    EditcontratosComponent,
+    ListcontratosComponent,  
+    
+    
+    //actividades_contrato
+    Addactividades_contratoComponent,
+    Editactividades_contratoComponent,
+    Listactividades_contratoComponent,
+    
+    //menu
+    PrincipalMenuComponent,
+
+    //evidencia
+    AddEvidenciaComponent,
+    EditevidenciaComponent,
+    ListevidenciaComponent,
+    AddPersonaComponent,
+    EditPersonaComponent,
+    ListPersonaComponent
+
+ 
   ],
   imports: [
     BrowserModule,

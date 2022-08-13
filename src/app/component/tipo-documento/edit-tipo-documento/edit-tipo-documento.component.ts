@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder} from '@angular/forms';
-import {tipodocumentoService } from 'src/app/service/tipodocumento.service';
+import { tipodocumentoService} from 'src/app/service/tipodocumento.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -45,11 +45,6 @@ export class Edittipo_documentoComponent implements OnInit {
       alert("Registro MODIFICADO con exito");  
       this.ruteador.navigateByUrl('/list-tipo_documento');
     });
-    
-    
-
-
-
   }
 
 }
