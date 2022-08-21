@@ -30,7 +30,7 @@ export class CanActivateGuard implements CanActivate {
         obs.next(false);
         obs.complete();
       }
-      return this.checkPermissions(JSON.parse(authResponse), url);
+      // return this.checkPermissions(JSON.parse(authResponse), url);
     });
   }
 

@@ -1,0 +1,61 @@
+
+
+
+<nav class="na" class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="isMenu">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="Carrucel">ALCALDIA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="">LOGIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Quienes somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">INICIO</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            CRUD
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="list-cargo">CARGOS</a></li>        
+            <li><a class="dropdown-item" routerLink="list-prueba">PRUEBA</a></li>
+            <li><a class="dropdown-item" routerLink="list-tipodocumento">TIPO DOCUMENTO</a></li>
+            <li><a class="dropdown-item" routerLink="list-secretaria">SECRETARIA</a></li>
+            <li><a class="dropdown-item"routerLink="list-oficina">OFICINA</a></li>
+            <li><a class="dropdown-item"routerLink="list-permisos">PERMISOS</a></li> 
+            <li><a class="dropdown-item"routerLink="list-funcionario">FUNCIONARIO</a></li> 
+            <li><a class="dropdown-item"routerLink="list-categoria">CATEGORIA</a></li> 
+            <li><a class="dropdown-item"routerLink="list-contratos">CONTRATOS</a></li> 
+            <li><a class="dropdown-item"routerLink="list-actividades_contrato">ACTIVIDADES DE CONTRATOS</a></li> 
+            <li><a class="dropdown-item"routerLink="list-evidencia">EVIDENCIA</a></li> 
+            <li><a class="dropdown-item"routerLink="login">login</a></li> 
+
+            
+
+
+        
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">SISTEMA APP-ALCALDIA</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">BUSCAR</button>
+      </form>
+    </div>
+  </div>
+</nav>
+

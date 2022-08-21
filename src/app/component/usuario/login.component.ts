@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { permisosService } from '../../service/permisos.service';
 import { AuthResponse } from '../../interfaces/login.interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent {
     password: '',
   };
 
-  constructor(private auth: permisosService) {}
+  constructor(private auth: permisosService, private ruteador:Router) {}
   /*
 
 */
@@ -24,6 +25,7 @@ export class LoginComponent {
       .login(this.usuario.email, this.usuario.password)
       .subscribe((res: AuthResponse) => {
         window.localStorage.setItem('auth', JSON.stringify(res));
+        window.location.pathname ="/list-cargo"
       });
   }
 }

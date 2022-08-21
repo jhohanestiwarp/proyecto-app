@@ -75,6 +75,7 @@ import { CarrucelComponent } from './component/shared/carrucel/carrucel.componen
 
 //slider
 import { SliderComponent } from './slider/slider.component';
+import { MenuComponent } from './component/menu/menu.component';
 
 
 
@@ -145,6 +146,7 @@ import { SliderComponent } from './slider/slider.component';
     //carrucel
      CarrucelComponent,
      SliderComponent,
+     MenuComponent,
      //
 
   ],

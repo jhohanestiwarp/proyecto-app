@@ -68,12 +68,14 @@ import { CarrucelComponent } from './component/shared/carrucel/carrucel.componen
 //slider
 import {SliderComponent } from "./slider/slider.component";
 
+//menu
+import {MenuComponent} from "./component/menu/menu.component"
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   //cargo
   { path: 'add-cargo', component: AddCargoComponent },
-  { path: 'list-cargo',canActivate: [CanActivateGuard],  component: ListCargoComponent },
+  { path: 'list-cargo', component: ListCargoComponent },
   { path: 'edit-cargo/:id_cargo', component: EditCargoComponent },
     
   //prueba
@@ -133,8 +135,9 @@ const routes: Routes = [
     { path: 'Carrucel', component: CarrucelComponent },
 
 
-    {path:'slider', component: SliderComponent}
-  
+    {path:'slider', component: SliderComponent},
+    
+    {path:'app-menu', component: MenuComponent}
 ];
 
 @NgModule({

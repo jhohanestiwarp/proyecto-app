@@ -10,6 +10,10 @@ import { AuthResponse } from '../interfaces/login.interfaces';
 export class permisosService {
   private API_URL: string = 'http://localhost:8090/api/permisos';
 
+  private AUTH_URL: string = 'http://localhost:8090/api/session';
+
+
+
   Api2: string = 'http://localhost:8090/api/persona';
 
   Api3: string = 'http://localhost:8090/api/rol';
@@ -20,10 +24,10 @@ export class permisosService {
     return this.clienteHttp.post(this.API_URL, datopermisos);
   }
 
-  login(email: string, pass: string): Observable<AuthResponse> {
-    return this.clienteHttp.post(this.API_URL, {
+  login(email: string, pass: string)  {
+    return this.clienteHttp.post(this.AUTH_URL, {
       correo: email,
-      password: pass,
+      password: pass
     });
   }
 
