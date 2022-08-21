@@ -19,7 +19,7 @@ export class CanActivateGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<boolean> | UrlTree {
+  ): boolean {
     return this.checkLogging(this.router.url);
   }
 
@@ -30,25 +30,16 @@ export class CanActivateGuard implements CanActivate {
         obs.next(false);
         obs.complete();
       }
-      // return this.checkPermissions(JSON.parse(authResponse), url);
+      return this.checkPermissions(JSON.parse(authResponse), url);
     });
   }
 
-  private checkPermissions(
-    authData: AuthResponse,
-    url: string
-  ): Observable<boolean> {
-    return new Observable((obs) => {
-      const permissions = authData.permisos.filter((auth) => {
-        return auth.url === url;
-      });
-
-      if (!permissions.length) {
-        obs.next(false);
-        obs.complete();
-      }
-      obs.next(true);
-      obs.complete();
+  private checkPermissions(authData: AuthResponse, url: string): boolean {
+    const permissions = authData.permisos.filter((auth) => {
+      return auth.url === url;
     });
+
+    if (!permissions.length) return false;
+    return true;
   }
 }
