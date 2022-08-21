@@ -32,7 +32,7 @@ export class funcionarioService {
     }
 
     Updatefuncionario(datosfuncionario:funcionario):Observable<any>{
-      return this.clienteHttp.put(this.Api,datosfuncionario );
+      return this.clienteHttp.put(this.Api,datosfuncionario);
     }
 
     

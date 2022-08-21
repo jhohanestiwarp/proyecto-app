@@ -55,16 +55,27 @@ import { AddEvidenciaComponent } from './component/evidencia/add-evidencia/add-e
 import { EditevidenciaComponent } from './component/evidencia/edit-evidencia/edit-evidencia.component';
 import { ListevidenciaComponent } from './component/evidencia/list-evidencia/list-evidencia.component';
 
-//menu
-import { PrincipalMenuComponent } from './component/menu/principal-menu/principal-menu.component';
+//guards
+import { CanActivateGuard } from './guards/permisos.guard';
+
+//login
+import { LoginComponent } from './component/usuario/login.component';
+
+
+//carrucel
+import { CarrucelComponent } from './component/shared/carrucel/carrucel.component';
+
+//slider
+import {SliderComponent } from "./slider/slider.component";
+
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'list-cargo' },
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
   //cargo
   { path: 'add-cargo', component: AddCargoComponent },
-  { path: 'list-cargo', component: ListCargoComponent },
+  { path: 'list-cargo',canActivate: [CanActivateGuard],  component: ListCargoComponent },
   { path: 'edit-cargo/:id_cargo', component: EditCargoComponent },
-
+    
   //prueba
   { path: 'add-prueba', component: AddPruebaComponent },
   { path: 'list-prueba', component: ListPruebaComponent },
@@ -114,9 +125,16 @@ const routes: Routes = [
   { path: 'add-evidencia', component: AddEvidenciaComponent },
   { path: 'list-evidencia', component: ListevidenciaComponent },
   { path: 'edit-evidencia/:id_contratos', component: EditevidenciaComponent },
+  
+  //login
+  { path: 'login', component: LoginComponent },
 
-  //menu
-  { path: 'principal-menu', component: PrincipalMenuComponent }
+    //Carrucel
+    { path: 'Carrucel', component: CarrucelComponent },
+
+
+    {path:'slider', component: SliderComponent}
+  
 ];
 
 @NgModule({

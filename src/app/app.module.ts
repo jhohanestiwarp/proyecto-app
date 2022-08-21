@@ -4,16 +4,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import{FormsModule, ReactiveFormsModule} from '@angular/forms';
 import{HttpClientModule} from '@angular/common/http';
-
+import { NgImageSliderModule } from 'ng-image-slider';
 //exportacion de componentes
 //cargo
+
 import { AddCargoComponent } from './component/cargo/add-cargo/add-cargo.component';
 import { ListCargoComponent } from './component/cargo/list-cargo/list-cargo.component';
 import { EditCargoComponent } from './component/cargo/edit-cargo/edit-cargo.component';
+
 //prueba
 import { AddPruebaComponent } from './component/prueba/add-prueba/add-prueba.component';
 import { EditPruebaComponent } from './component/prueba/edit-prueba/edit-prueba.component';
 import { ListPruebaComponent } from './component/prueba/list-prueba/list-prueba.component';
+
 //tipo documento
 import {Addtipo_documentoComponent  } from './component/tipo-documento/add-tipo-documento/add-tipo-documento.component';
 import { Edittipo_documentoComponent } from './component/tipo-documento/edit-tipo-documento/edit-tipo-documento.component';
@@ -28,6 +31,7 @@ import { ListsecretariaComponent } from './component/secretaria/list-secretaria/
 import { AddoficinaComponent } from './component/oficina/add-oficina/add-oficina.component';
 import { EditoficinaComponent } from './component/oficina/edit-oficina/edit-oficina.component';
 import { ListoficinaComponent } from './component/oficina/list-oficina/list-oficina.component';
+
 //permisos
 import { AddpermisosComponent } from './component/perimisos/add-permisos/add-permisos.component';
 import { EditpermisosComponent } from './component/perimisos/edit-permisos/edit-permisos.component';
@@ -43,7 +47,6 @@ import { AddcategoriaComponent } from './component/categoria/add-categoria/add-c
 import { EditcategoriaComponent } from './component/categoria/edit-categoria/edit-categoria.component';
 import { ListcategoriaComponent } from './component/categoria/list-categoria/list-categoria.component';
 
-
 //contratos
 import { AddContratosComponent } from './component/contratos/add-contratos/add-contratos.component';
 import { EditcontratosComponent } from './component/contratos/edit-contratos/edit-contratos.component';
@@ -54,16 +57,25 @@ import { Addactividades_contratoComponent } from './component/actividades_contra
 import {Editactividades_contratoComponent  } from './component/actividades_contrato/edit-actividades-contrato/edit-actividades-contrato.component';
 import {Listactividades_contratoComponent  } from './component/actividades_contrato/list-actividades-contrato/list-actividades-contrato.component';
 
-//menu
-import { PrincipalMenuComponent } from './component/menu/principal-menu/principal-menu.component';
-
 //evidencia
 import { AddEvidenciaComponent } from './component/evidencia/add-evidencia/add-evidencia.component';
 import { EditevidenciaComponent } from './component/evidencia/edit-evidencia/edit-evidencia.component';
 import { ListevidenciaComponent } from './component/evidencia/list-evidencia/list-evidencia.component';
+
+//persona
 import { AddPersonaComponent } from './component/persona/add-persona/add-persona.component';
 import { EditPersonaComponent } from './component/persona/edit-persona/edit-persona.component';
 import { ListPersonaComponent } from './component/persona/list-persona/list-persona.component';
+
+//login
+import { LoginComponent } from './component/usuario/login.component';
+
+//carrucel
+import { CarrucelComponent } from './component/shared/carrucel/carrucel.component';
+
+//slider
+import { SliderComponent } from './slider/slider.component';
+
 
 
 
@@ -116,26 +128,32 @@ import { ListPersonaComponent } from './component/persona/list-persona/list-pers
     Addactividades_contratoComponent,
     Editactividades_contratoComponent,
     Listactividades_contratoComponent,
-    
-    //menu
-    PrincipalMenuComponent,
 
     //evidencia
     AddEvidenciaComponent,
     EditevidenciaComponent,
     ListevidenciaComponent,
+   
+    //persona
     AddPersonaComponent,
     EditPersonaComponent,
-    ListPersonaComponent
+    ListPersonaComponent,
 
- 
+    //login
+    LoginComponent,
+
+    //carrucel
+     CarrucelComponent,
+     SliderComponent,
+     //
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
