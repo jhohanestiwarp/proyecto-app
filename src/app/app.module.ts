@@ -108,7 +108,7 @@ import { MenuComponent } from './component/menu/menu.component';
     AddpermisosComponent,
     EditpermisosComponent,
     ListpermisosComponent,
-    
+
     //funcionario
     AddfuncionarioComponent,
     EditfuncionarioComponent,
@@ -118,13 +118,13 @@ import { MenuComponent } from './component/menu/menu.component';
     AddcategoriaComponent,
     EditcategoriaComponent,
     ListcategoriaComponent,
-    
+
     //contratos
     AddContratosComponent,
     EditcontratosComponent,
-    ListcontratosComponent,  
-    
-    
+    ListcontratosComponent,
+
+
     //actividades_contrato
     Addactividades_contratoComponent,
     Editactividades_contratoComponent,
@@ -134,7 +134,7 @@ import { MenuComponent } from './component/menu/menu.component';
     AddEvidenciaComponent,
     EditevidenciaComponent,
     ListevidenciaComponent,
-   
+
     //persona
     AddPersonaComponent,
     EditPersonaComponent,

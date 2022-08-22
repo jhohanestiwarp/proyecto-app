@@ -61,15 +61,14 @@ import { CanActivateGuard } from './guards/permisos.guard';
 //login
 import { LoginComponent } from './component/usuario/login.component';
 
-
 //carrucel
 import { CarrucelComponent } from './component/shared/carrucel/carrucel.component';
 
 //slider
-import {SliderComponent } from "./slider/slider.component";
+import { SliderComponent } from './slider/slider.component';
 
 //menu
-import {MenuComponent} from "./component/menu/menu.component"
+import { MenuComponent } from './component/menu/menu.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -77,7 +76,7 @@ const routes: Routes = [
   { path: 'add-cargo', component: AddCargoComponent },
   { path: 'list-cargo', component: ListCargoComponent },
   { path: 'edit-cargo/:id_cargo', component: EditCargoComponent },
-    
+
   //prueba
   { path: 'add-prueba', component: AddPruebaComponent },
   { path: 'list-prueba', component: ListPruebaComponent },
@@ -86,12 +85,18 @@ const routes: Routes = [
   //tipo-documento
   { path: 'add-tipo_documento', component: Addtipo_documentoComponent },
   { path: 'list-tipo_documento', component: Listtipo_documentoComponent },
-  { path: 'edit-tipo_documento/:id_prueba', component: Edittipo_documentoComponent },
+  {
+    path: 'edit-tipo_documento/:id_prueba',
+    component: Edittipo_documentoComponent,
+  },
 
   //secretaria
   { path: 'add-secretaria', component: AddsecretariaComponent },
   { path: 'list-secretaria', component: ListsecretariaComponent },
-  { path: 'edit-secretaria/:id_secretaria', component: EditsecretariaComponent },
+  {
+    path: 'edit-secretaria/:id_secretaria',
+    component: EditsecretariaComponent,
+  },
 
   //oficina
   { path: 'add-oficina', component: AddoficinaComponent },
@@ -106,7 +111,10 @@ const routes: Routes = [
   //funcionario
   { path: 'add-funcionario', component: AddfuncionarioComponent },
   { path: 'list-funcionario', component: ListfuncionarioComponent },
-  { path: 'edit-funcionario/:id_funcionario', component: EditfuncionarioComponent },
+  {
+    path: 'edit-funcionario/:id_funcionario',
+    component: EditfuncionarioComponent,
+  },
 
   //categoria
   { path: 'add-categoria', component: AddcategoriaComponent },
@@ -114,9 +122,18 @@ const routes: Routes = [
   { path: 'edit-categoria/:id_categoria', component: EditcategoriaComponent },
 
   //actividades_contrato
-  { path: 'add-actividades_contrato', component: Addactividades_contratoComponent },
-  { path: 'list-actividades_contrato', component: Listactividades_contratoComponent },
-  { path: 'edit-actividades_contrato/:id_actividades_contrato', component: Editactividades_contratoComponent },
+  {
+    path: 'add-actividades_contrato',
+    component: Addactividades_contratoComponent,
+  },
+  {
+    path: 'list-actividades_contrato',
+    component: Listactividades_contratoComponent,
+  },
+  {
+    path: 'edit-actividades_contrato/:id_actividades_contrato',
+    component: Editactividades_contratoComponent,
+  },
 
   //contratos
   { path: 'add-contratos', component: AddContratosComponent },
@@ -127,21 +144,20 @@ const routes: Routes = [
   { path: 'add-evidencia', component: AddEvidenciaComponent },
   { path: 'list-evidencia', component: ListevidenciaComponent },
   { path: 'edit-evidencia/:id_contratos', component: EditevidenciaComponent },
-  
+
   //login
   { path: 'login', component: LoginComponent },
 
-    //Carrucel
-    { path: 'Carrucel', component: CarrucelComponent },
+  //Carrucel
+  { path: 'Carrucel', component: CarrucelComponent },
 
+  { path: 'slider', component: SliderComponent },
 
-    {path:'slider', component: SliderComponent},
-    
-    {path:'app-menu', component: MenuComponent}
+  { path: 'app-menu', component: MenuComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

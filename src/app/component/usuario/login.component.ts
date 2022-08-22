@@ -15,9 +15,6 @@ export class LoginComponent {
   };
 
   constructor(private auth: permisosService, private ruteador:Router) {}
-  /*
-
-*/
 
   ingresar() {
     if (!this.usuario.email || !this.usuario.password) return;

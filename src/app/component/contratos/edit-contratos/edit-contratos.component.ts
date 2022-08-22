@@ -5,8 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-contratos',
-  templateUrl: './Edit-contratos.component.html',
-  styleUrls: ['./Edit-contratos.component.css']
+  templateUrl: './edit-contratos.component.html',
+  styleUrls: ['./edit-contratos.component.css']
 })
 export class EditcontratosComponent implements OnInit {
   formContratos:FormGroup;
@@ -16,7 +16,7 @@ export class EditcontratosComponent implements OnInit {
     private ruteador:Router,
     private activedRoute:ActivatedRoute ) {
       this.elID=this.activedRoute.snapshot.paramMap.get('id_contratos');
-     
+
 
       this.contratosService.Obtenercontratos(this.elID).subscribe(result =>{
         console.log(result);
@@ -25,19 +25,17 @@ export class EditcontratosComponent implements OnInit {
         });
       }
       );
-  
+
       this.formContratos = this.formulario.group(
         {
-    
+
           id_contratos:['']
         }
       );
-  
+
      }
 
-  ngOnInit(): void {
-    console.log(this.elID);
-  }
+  ngOnInit(): void {}
 
   enviarDatos():any {
     console.log

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { permisos } from '../models/Permisos';
-import { AuthResponse } from '../interfaces/login.interfaces';
 
 @Injectable({
   providedIn: 'root',
