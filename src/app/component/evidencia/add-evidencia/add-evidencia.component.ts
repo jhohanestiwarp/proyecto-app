@@ -42,9 +42,10 @@ ngOnInit(): void {
 
 
 enviarDatos():any {
-this.evidenciaService.Addevidencia(this.formevidencia.value).subscribe(result=>{
-  console.log("aaaaa");
+  console.log("xxxxxxxxxxxxxxxxxxxxxxxx",this.formevidencia.value);
   
+this.evidenciaService.Addevidencia(this.formevidencia.value).subscribe(result=>{
+  // console.log("ppppppppppppppppp",result);
   alert("Registro agregado con exito")
   this.ruteador.navigateByUrl('/list-evidencia'); 
 

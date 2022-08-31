@@ -71,7 +71,7 @@ import { ListPersonaComponent } from './component/persona/list-persona/list-pers
 import { LoginComponent } from './component/usuario/login.component';
 
 //carrucel
-import { CarrucelComponent } from './component/shared/carrucel/carrucel.component';
+// import { CarrucelComponent } from './component/shared/carrucel/carrucel.component';
 
 //slider
 import { SliderComponent } from './slider/slider.component';
@@ -144,7 +144,7 @@ import { MenuComponent } from './component/menu/menu.component';
     LoginComponent,
 
     //carrucel
-     CarrucelComponent,
+    //  CarrucelComponent,
      SliderComponent,
      MenuComponent,
      //

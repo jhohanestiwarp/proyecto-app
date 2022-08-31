@@ -25,7 +25,7 @@ export class SliderComponent implements OnInit {
         alt: 'Image 2'
       }, {
         image: "/assets/imagenes/encuesta.jpg",
-        thumbImage: "/assets/imagenes/encuesta.jpg",
+        thumbImage: "/assets/imagenes/13.jpg",
         title: 'Image 3',
         alt: 'Image 3'
       }, {
@@ -35,12 +35,12 @@ export class SliderComponent implements OnInit {
         alt: 'Image 4'
       }, {
         image: "/assets/imagenes/encuesta.jpg",
-        thumbImage: "/assets/imagenes/encuesta.jpg",
+        thumbImage: "/assets/imagenes/13.jpg",
         title: 'Image 5',
         alt: 'Image 5'
       }, {
          image: "/assets/imagenes/encuesta.jpg",
-        thumbImage: "/assets/imagenes/encuesta.jpg",
+        thumbImage: "/assets/imagenes/14.png",
         title: 'Image 6',
         alt: 'Image 6'
       }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetPermissionService } from 'src/app/service/getPermissions.service';
 import { oficinaService } from 'src/app/service/oficina.service';
 
 
@@ -9,7 +10,21 @@ import { oficinaService } from 'src/app/service/oficina.service';
 })
 export class ListoficinaComponent implements OnInit {
   public oficinas:any;
-  constructor(private oficinaService:oficinaService) { }
+  puedeVer: boolean = false;
+  puedeEliminar: boolean = false;
+  puedeModificar: boolean = false;
+  puedeCrear: boolean = false;
+
+  constructor(
+    private oficinaService:oficinaService,
+    private getPermissionService: GetPermissionService
+    ) {
+      const permissions = this.getPermissionService.getPermissions();
+      this.puedeVer = !!permissions.read;
+      this.puedeEliminar = !!permissions.delete;
+      this.puedeModificar = !!permissions.update;
+      this.puedeCrear = !!permissions.create;
+    }
 
   ngOnInit(): void {
     this.oficinaService.Listoficina().subscribe(result =>{this.oficinas = result

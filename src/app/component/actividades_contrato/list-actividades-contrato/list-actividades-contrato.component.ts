@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { actividades_contratoService } from 'src/app/service/actividades_contrato.service';
+import { GetPermissionService } from 'src/app/service/getPermissions.service';
 
 
 @Component({
@@ -9,7 +10,21 @@ import { actividades_contratoService } from 'src/app/service/actividades_contrat
 })
 export class Listactividades_contratoComponent implements OnInit {
   public actividades_contratos:any;
-  constructor(private actividades_contratoService:actividades_contratoService) { }
+  puedeVer: boolean = false;
+  puedeEliminar: boolean = false;
+  puedeModificar: boolean = false;
+  puedeCrear: boolean = false;
+  constructor(
+    private actividades_contratoService:actividades_contratoService,
+    private getPermissionService: GetPermissionService
+    ) {
+      const permissions = this.getPermissionService.getPermissions();
+      this.puedeVer = !!permissions.read;
+      this.puedeEliminar = !!permissions.delete;
+      this.puedeModificar = !!permissions.update;
+      this.puedeCrear = !!permissions.create;
+    }
+  
 
   ngOnInit(): void {
     this.actividades_contratoService.Listactividades_contrato().subscribe(result =>{this.actividades_contratos = result

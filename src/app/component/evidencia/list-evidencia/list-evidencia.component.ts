@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { evidenciaService } from 'src/app/service/evidencia.service';
+import { GetPermissionService } from 'src/app/service/getPermissions.service';
 
 
 @Component({
@@ -9,8 +10,23 @@ import { evidenciaService } from 'src/app/service/evidencia.service';
 })
 export class ListevidenciaComponent implements OnInit {
   public evidencias:any;
-  constructor(private evidenciaService:evidenciaService) { }
+  puedeVer: boolean = false;
+  puedeEliminar: boolean = false;
+  puedeModificar: boolean = false;
+  puedeCrear: boolean = false;
 
+  constructor(
+    private evidenciaService:evidenciaService,
+    private getPermissionService: GetPermissionService
+
+    ) {
+      const permissions = this.getPermissionService.getPermissions();
+      this.puedeVer = !!permissions.read;
+      this.puedeEliminar = !!permissions.delete;
+      this.puedeModificar = !!permissions.update;
+      this.puedeCrear = !!permissions.create;
+    }
+  
 
   ngOnInit(): void {
     this.evidenciaService.Listevidencia().subscribe(result =>{this.evidencias = result

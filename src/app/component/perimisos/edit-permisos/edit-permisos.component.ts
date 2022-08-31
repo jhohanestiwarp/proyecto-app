@@ -42,8 +42,9 @@ export class EditpermisosComponent implements OnInit {
   }
 
   enviarDatos():any {
-    console.log
-    this.permisosService.Updatepermisos({id_permisos:this.elID,...this.formpermisos.value}).subscribe(result=>{
+    console.log("DDDDDDDDDDDDDDD")
+    this.permisosService.Updatepermisos
+    ({id_permisos:this.elID,...this.formpermisos.value}).subscribe(result=>{
       alert("Modificar con exito");
       this.ruteador.navigateByUrl('/list-permisos');
     });

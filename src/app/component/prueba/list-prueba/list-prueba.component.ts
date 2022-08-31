@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetPermissionService } from 'src/app/service/getPermissions.service';
 import { PruebaService } from 'src/app/service/prueba.service';
 
 @Component({
@@ -7,19 +8,34 @@ import { PruebaService } from 'src/app/service/prueba.service';
   styleUrls: ['./list-prueba.component.css']
 })
 export class ListPruebaComponent implements OnInit {
-  public Prueba:any
-  constructor(private pruebaService:PruebaService) { }
+  public prueba: any;
+  puedeVer: boolean = false;
+  puedeEliminar: boolean = false;
+  puedeModificar: boolean = false;
+  puedeCrear: boolean = false;
+
+  constructor(
+    private PruebaService: PruebaService,
+    private getPermissionService: GetPermissionService
+  ) {
+    const permissions = this.getPermissionService.getPermissions();
+    this.puedeVer = !!permissions.read;
+    this.puedeEliminar = !!permissions.delete;
+    this.puedeModificar = !!permissions.update;
+    this.puedeCrear = !!permissions.create;
+  }
+
 
   ngOnInit(): void {
-    this.pruebaService.Listprueba().subscribe(result =>{console.log(result);
-      this.Prueba =result;
+    this.PruebaService.Listprueba().subscribe(result =>{console.log(result);
+      this.prueba =result;
   });
 }
 
   deletePrueba(id:any, iControl:any){
     if(window.confirm("Desea borrar el registro?")){
-    this.pruebaService.DeletePrueba(id).subscribe((respuesta)=>{
-      this.Prueba.splice(iControl, 1)
+    this.PruebaService.DeletePrueba(id).subscribe((respuesta)=>{
+      this.prueba.splice(iControl, 1)
     });
   }
   }

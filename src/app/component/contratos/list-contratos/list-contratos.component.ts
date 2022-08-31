@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { contratosService } from 'src/app/service/contratos.service';
+import { GetPermissionService } from 'src/app/service/getPermissions.service';
 
 
 @Component({
@@ -9,7 +10,22 @@ import { contratosService } from 'src/app/service/contratos.service';
 })
 export class ListcontratosComponent implements OnInit {
   public contratoss:any;
-  constructor(private contratosService:contratosService) { }
+  puedeVer: boolean = false;
+  puedeEliminar: boolean = false;
+  puedeModificar: boolean = false;
+  puedeCrear: boolean = false;
+
+  constructor(
+    private contratosService:contratosService,
+    private getPermissionService: GetPermissionService
+    ) {
+    const permissions = this.getPermissionService.getPermissions();
+    this.puedeVer = !!permissions.read;
+    this.puedeEliminar = !!permissions.delete;
+    this.puedeModificar = !!permissions.update;
+    this.puedeCrear = !!permissions.create;
+  }
+
 
   ngOnInit(): void {
     this.contratosService.Listcontratos().subscribe(result =>{this.contratoss = result

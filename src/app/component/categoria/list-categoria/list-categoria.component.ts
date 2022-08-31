@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { categoriaService } from 'src/app/service/categoria.service';
+import { GetPermissionService } from 'src/app/service/getPermissions.service';
 
 @Component({
   selector: 'app-list-categoria',
@@ -8,7 +9,21 @@ import { categoriaService } from 'src/app/service/categoria.service';
 })
 export class ListcategoriaComponent implements OnInit {
   public categorias:any
-  constructor(private categoriaService:categoriaService) { }
+  puedeVer: boolean = false;
+  puedeEliminar: boolean = false;
+  puedeModificar: boolean = false;
+  puedeCrear: boolean = false;
+
+  constructor(
+    private categoriaService:categoriaService,
+    private getPermissionService: GetPermissionService
+     ) {
+    const permissions = this.getPermissionService.getPermissions();
+    this.puedeVer = !!permissions.read;
+    this.puedeEliminar = !!permissions.delete;
+    this.puedeModificar = !!permissions.update;
+    this.puedeCrear = !!permissions.create;
+  }
 
   ngOnInit(): void {
     this.categoriaService.Listcategoria().subscribe(result =>{console.log(result);

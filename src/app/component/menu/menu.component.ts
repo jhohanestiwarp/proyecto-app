@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { menuData } from './menu.data';
 import { AuthResponse } from '../../interfaces/login.interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -12,9 +13,11 @@ export class MenuComponent implements OnInit {
   isOpen: boolean = false;
   menuList: { label: string; url: string }[] = [];
 
-  constructor() {
+  constructor( private ruteador:Router) {
+    
     const userData: string = localStorage.getItem('auth');
     this.isMenu = !!userData;
+    
 
     if (userData) {
       const userDataParse: AuthResponse = JSON.parse(userData);
@@ -27,5 +30,11 @@ export class MenuComponent implements OnInit {
 
   toggle() {
     this.isOpen = !this.isOpen;
+  }
+
+  cerrarSeccion(){
+  localStorage.clear()
+  this.ruteador.navigateByUrl('/login')
+
   }
 }
