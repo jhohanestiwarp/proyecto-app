@@ -26,11 +26,11 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   toggle() {
     this.isOpen = !this.isOpen;
-    window.location.reload()
   }
 
   cerrarSeccion(){

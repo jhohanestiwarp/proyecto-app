@@ -8,7 +8,7 @@ export const menuData = [
   { label: 'Categoria', url: '/list-categoria' },
   { label: 'Actividades de contrato', url: '/list-actividades_contrato' },
   { label: 'Contrato', url: '/list-contratos' },
-  { label: 'Evidencia', url: '/list-evidencia' },
+  { label: 'Evidencia', url: '/list-evidencia'},
   { label: 'Persona', url: '/list-persona' },
   { label: 'Cargo', url: '/list-cargo' }
 ];

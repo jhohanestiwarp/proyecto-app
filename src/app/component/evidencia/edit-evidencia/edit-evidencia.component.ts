@@ -19,8 +19,13 @@ export class EditevidenciaComponent implements OnInit {
      
 
       this.evidenciaService.Obtenerevidencia(this.elID).subscribe(result =>{
-        console.log(result);
+        console.log("ssssssssssssss",result);
         this.formevidencia.setValue({
+          nombre:result['nombre'],
+          descripcion:result['descripcion'],
+          ruta_almacenamiento:result['ruta_almacenamiento'],
+          fecha_cargue:result['fecha_cargue'],
+          estado:result['estado'],
           id_actividades_contrato:result['id_actividades_contrato'],
           id_prueba:result['id_prueba'],
           id_persona_carga:result['id_persona_carga']

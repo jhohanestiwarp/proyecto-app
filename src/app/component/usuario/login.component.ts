@@ -22,7 +22,7 @@ export class LoginComponent {
       .login(this.usuario.email, this.usuario.password)
       .subscribe((res: AuthResponse) => {
         window.localStorage.setItem('auth', JSON.stringify(res));
-        window.location.pathname ="/list-cargo"
+        window.location.pathname ="/list-persona"
       });
   }
 }
