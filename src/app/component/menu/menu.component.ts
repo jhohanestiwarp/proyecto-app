@@ -30,11 +30,11 @@ export class MenuComponent implements OnInit {
 
   toggle() {
     this.isOpen = !this.isOpen;
+    window.location.reload()
   }
 
   cerrarSeccion(){
   localStorage.clear()
   this.ruteador.navigateByUrl('/login')
-
   }
 }

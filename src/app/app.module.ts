@@ -63,9 +63,9 @@ import { EditevidenciaComponent } from './component/evidencia/edit-evidencia/edi
 import { ListevidenciaComponent } from './component/evidencia/list-evidencia/list-evidencia.component';
 
 //persona
-import { AddPersonaComponent } from './component/persona/add-persona/add-persona.component';
-import { EditPersonaComponent } from './component/persona/edit-persona/edit-persona.component';
-import { ListPersonaComponent } from './component/persona/list-persona/list-persona.component';
+import { AddpersonaComponent } from './component/persona/add-persona/add-persona.component';
+import { EditpersonaComponent } from './component/persona/edit-persona/edit-persona.component';
+import { ListpersonaComponent } from './component/persona/list-persona/list-persona.component';
 
 //login
 import { LoginComponent } from './component/usuario/login.component';
@@ -136,9 +136,9 @@ import { MenuComponent } from './component/menu/menu.component';
     ListevidenciaComponent,
 
     //persona
-    AddPersonaComponent,
-    EditPersonaComponent,
-    ListPersonaComponent,
+    AddpersonaComponent,
+    EditpersonaComponent,
+    ListpersonaComponent,
 
     //login
     LoginComponent,

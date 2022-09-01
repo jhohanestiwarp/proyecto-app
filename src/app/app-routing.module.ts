@@ -55,6 +55,11 @@ import { AddEvidenciaComponent } from './component/evidencia/add-evidencia/add-e
 import { EditevidenciaComponent } from './component/evidencia/edit-evidencia/edit-evidencia.component';
 import { ListevidenciaComponent } from './component/evidencia/list-evidencia/list-evidencia.component';
 
+//perosna
+import { AddpersonaComponent } from './component/persona/add-persona/add-persona.component';
+import { EditpersonaComponent } from './component/persona/edit-persona/edit-persona.component';
+import { ListpersonaComponent } from './component/persona/list-persona/list-persona.component';
+
 //guards
 import { CanActivateGuard } from './guards/permisos.guard';
 
@@ -125,7 +130,12 @@ const routes: Routes = [
   //evidencia
   { path: 'add-evidencia', component: AddEvidenciaComponent },
   { path: 'list-evidencia', component: ListevidenciaComponent },
-  { path: 'edit-evidencia/:id_contratos', component: EditevidenciaComponent },
+  { path: 'edit-evidencia/:id_evidencia', component: EditevidenciaComponent },
+
+    //persona
+    { path: 'add-persona', component: AddpersonaComponent },
+    { path: 'list-persona', component: ListpersonaComponent },
+    { path: 'edit-persona/:id_persona', component: EditpersonaComponent },
 
   //login
   { path: 'login', component: LoginComponent },
