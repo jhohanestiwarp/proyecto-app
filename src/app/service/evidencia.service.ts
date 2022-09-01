@@ -19,6 +19,7 @@ export class evidenciaService {
     constructor(private clienteHttp: HttpClient) { }
 
     Addevidencia(datoevidencia: evidencia): Observable<any> {
+    
         return this.clienteHttp.post(this.Api, datoevidencia);
     }
 
@@ -27,7 +28,7 @@ export class evidenciaService {
     }
 
     Deleteevidencia(id: string): Observable<any> {
-        return this.clienteHttp.delete(this.Api + "/" + id);
+        return this.clienteHttp.delete(this.Api + "/" + id)
     }
 
     Obtenerevidencia(id: string): Observable<any> {

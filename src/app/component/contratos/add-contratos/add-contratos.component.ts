@@ -33,6 +33,8 @@ ngOnInit(): void {
 
 
 enviarDatos():any {
+console.log("sssssssss",this.formcontratos.value);
+
 this.contratosService.Addcontratos(this.formcontratos.value).subscribe(result=>{
   alert("Registro agregado con exito")
   this.ruteador.navigateByUrl('/list-contratos'); 

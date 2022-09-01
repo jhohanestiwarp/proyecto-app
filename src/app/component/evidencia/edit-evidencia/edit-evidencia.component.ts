@@ -28,15 +28,17 @@ export class EditevidenciaComponent implements OnInit {
       }
       );
   
-      this.formevidencia = this.formulario.group(
-        {
-    
-          id_actividades_contrato:[''],
-          id_prueba:[''],
-          id_persona_carga:['']
-        }
-      );
-  
+      this.formevidencia=this.formulario.group({
+        nombre:[''],
+        descripcion:[''],
+        ruta_almacenamiento:[''],
+        fecha_cargue:[''],
+        estado:[''],
+        id_actividades_contrato:[''],
+        id_prueba:[''],
+        id_persona_carga:['']
+      })
+
      }
 
   ngOnInit(): void {

@@ -15,7 +15,7 @@ export class AddcategoriaComponent implements OnInit {
     private categoriaService:categoriaService,
     private ruteador:Router ) {
       this.formcategoria=this.formulario.group({
-        categoria:['']
+        categoria_documento:['']
       })
   
      }
