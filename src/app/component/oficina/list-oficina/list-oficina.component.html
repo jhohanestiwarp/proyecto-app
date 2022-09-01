@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
   
-     <a  class="btn btn-success" routerLink="/add-oficina/">Agregar nuevo oficina</a>
+     <a *ngIf="puedeCrear"  class="btn btn-success" routerLink="/add-oficina/">Agregar nuevo oficina</a>
     </div>
     <div class="card-body">
       <h2>Lista oficinas 🤗</h2>
@@ -19,8 +19,8 @@
             <td>{{oficina.nombre}}</td>
             <td>{{oficina.id_secretaria}}</td>
             <td>
-               <a  class="btn btn-info" routerLink="/edit-oficina/{{oficina.id_oficina}}">Editar</a>
-              <a  class="btn btn-danger" (click)=" deleteoficina(oficina.id_oficina,iControl)" role="button">Borrar</a> 
+               <a *ngIf="puedeModificar"  class="btn btn-info" routerLink="/edit-oficina/{{oficina.id_oficina}}">Editar</a>
+              <a *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deleteoficina(oficina.id_oficina,iControl)" role="button">Borrar</a> 
             </td>
           </tr>
         </tbody>

@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
   
-     <a  class="btn btn-success" routerLink="/add-evidencia/">Agregar nuevo evidencia</a>
+     <a *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-evidencia/">Agregar nuevo evidencia</a>
     </div>
     <div class="card-body">
       <h2>Lista evidencia 🧐</h2>
@@ -31,8 +31,8 @@
             <td>{{evidencia.id_prueba}}</td>
             <td>{{evidencia.id_persona_carga}}</td>
             <td>
-               <a  class="btn btn-info" routerLink="/edit-evidencia/{{evidencia.id_evidencia}}">Editar</a>
-              <a  class="btn btn-danger" (click)=" deleteevidencia(evidencia.id_evidencia,iControl)" role="button">Borrar</a> 
+               <a  *ngIf="puedeModificar" class="btn btn-info" routerLink="/edit-evidencia/{{evidencia.id_evidencia}}">Editar</a>
+              <a  *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deleteevidencia(evidencia.id_evidencia,iControl)" role="button">Borrar</a> 
             </td>
           </tr>
         </tbody>

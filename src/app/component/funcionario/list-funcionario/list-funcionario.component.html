@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
   
-     <a  class="btn btn-success" routerLink="/add-funcionario/">Agregar nuevo funcionario</a>
+     <a *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-funcionario/">Agregar nuevo funcionario</a>
     </div>
     <div class="card-body">
       <h2>Lista funcionario 🤠</h2>
@@ -21,8 +21,8 @@
             <td>{{funcionario.id_persona}}</td>
             <td>{{funcionario.id_cargo}}</td>
             <td>
-               <a  class="btn btn-info" routerLink="/Edit-funcionario/{{funcionario.id_funcionario}}">Editar</a>
-              <a  class="btn btn-danger" (click)=" deletefuncionario(funcionario.id_funcionario,iControl)" role="button">Borrar</a> 
+               <a *ngIf="puedeModificar" class="btn btn-info" routerLink="/Edit-funcionario/{{funcionario.id_funcionario}}">Editar</a>
+              <a  *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deletefuncionario(funcionario.id_funcionario,iControl)" role="button">Borrar</a> 
             </td>
           </tr>
         </tbody>

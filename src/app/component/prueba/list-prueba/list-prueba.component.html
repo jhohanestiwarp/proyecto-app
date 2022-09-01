@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
   
-     <a  class="btn btn-success" routerLink="/add-prueba/">Agregar nueva Prueba</a>
+     <a *ngIf="puedeCrear"  class="btn btn-success" routerLink="/add-prueba/">Agregar nueva Prueba</a>
     </div>
     <div class="card-body">
       <h2>Lista Prueba 🤔</h2>
@@ -17,8 +17,8 @@
             <td>{{prueba.id_prueba}}</td>
             <td>{{prueba.prueba}}</td>
             <td>
-              <a  class="btn btn-info" routerLink="/edit-prueba/{{prueba.id_prueba}}">Editar</a>
-              <a  class="btn btn-danger" (click)=" deletePrueba(prueba.id_prueba,iControl)" role="button">Borrar</a>
+              <a  *ngIf="puedeModificar" class="btn btn-info" routerLink="/edit-prueba/{{prueba.id_prueba}}">Editar</a>
+              <a *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deletePrueba(prueba.id_prueba,iControl)" role="button">Borrar</a>
             </td>
           </tr>
         </tbody>

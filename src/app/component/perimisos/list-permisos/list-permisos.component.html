@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
   
-     <a  class="btn btn-success" routerLink="/add-permisos/">Agregar nuevo permisos</a>
+     <a *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-permisos/">Agregar nuevo permisos</a>
     </div>
     <div class="card-body">
       <h2>Lista permisos 😏</h2>
@@ -19,8 +19,8 @@
             <td>{{permisos.id_persona}}</td>
             <td>{{permisos.id_rol}}</td>
             <td>
-               <a  class="btn btn-info" routerLink="/edit-permisos/{{permisos.id_permisos}}">Editar</a>
-              <a  class="btn btn-danger" (click)=" deletepermisos(permisos.id_permisos,iControl)" role="button">Borrar</a> 
+               <a *ngIf="puedeModificar" class="btn btn-info" routerLink="/edit-permisos/{{permisos.id_permisos}}">Editar</a>
+              <a *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deletepermisos(permisos.id_permisos,iControl)" role="button">Borrar</a> 
             </td>
           </tr>
         </tbody>

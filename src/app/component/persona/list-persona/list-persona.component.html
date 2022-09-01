@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
   
-     <a  class="btn btn-success" routerLink="/add-persona/">Agregar nuevo persona</a>
+     <a  *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-persona/">Agregar nuevo persona</a>
     </div>
     <div class="card-body">
       <h2>Lista persona 🧐</h2>
@@ -33,8 +33,8 @@
             <td>{{persona.id_tipo_documento}}</td>
             <td>{{persona.password}}</td>
             <td>
-               <a  class="btn btn-info" routerLink="/edit-persona/{{persona.id_persona}}">Editar</a>
-              <a  class="btn btn-danger" (click)=" deletepersona(persona.id_persona,iControl)" role="button">Borrar</a> 
+               <a  *ngIf="puedeModificar" class="btn btn-info" routerLink="/edit-persona/{{persona.id_persona}}">Editar</a>
+              <a  *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deletepersona(persona.id_persona,iControl)" role="button">Borrar</a> 
             </td>
           </tr>
         </tbody>

@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header">
 
-   <a  class="btn btn-success" routerLink="/add-actividades_contrato/">Agregar nuevo actividades contrato</a>
+   <a *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-actividades_contrato/">Agregar nuevo actividades contrato</a>
   </div>
   <div class="card-body">
     <h2>Lista actividades contrato 🤩</h2>
@@ -23,8 +23,8 @@
           <td>{{item.nombre_actividad}}</td>
           
           <td>
-             <a  class="btn btn-info" routerLink="/Edit-actividades_contrato/{{item.id_actividades_contrato}}">Editar</a>
-            <a  class="btn btn-danger" (click)=" deleteactividades_contrato(item.id_actividades_contrato,iControl)" role="button">Borrar</a> 
+             <a *ngIf="puedeModificar" class="btn btn-info" routerLink="/Edit-actividades_contrato/{{item.id_actividades_contrato}}">Editar</a>
+            <a   *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deleteactividades_contrato(item.id_actividades_contrato,iControl)" role="button">Borrar</a> 
           </td>
         </tr>
       </tbody>
