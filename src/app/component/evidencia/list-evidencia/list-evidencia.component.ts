@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { evidenciaService } from 'src/app/service/evidencia.service';
 import { GetPermissionService } from 'src/app/service/getPermissions.service';
+import * as XLSX from 'xlsx';
 
 
 @Component({
@@ -40,5 +41,14 @@ export class ListevidenciaComponent implements OnInit {
     });
   }
   }
+  name = 'ExcelSheet.xlsx';
+  exportToExcel(): void {
+    let element = document.getElementById('season-tble');
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+    XLSX.writeFile(book, this.name);
+  }
 }

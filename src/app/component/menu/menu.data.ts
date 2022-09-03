@@ -10,5 +10,6 @@ export const menuData = [
   { label: 'Contrato', url: '/list-contratos' },
   { label: 'Evidencia', url: '/list-evidencia'},
   { label: 'Persona', url: '/list-persona' },
-  { label: 'Cargo', url: '/list-cargo' }
+  { label: 'Cargo', url: '/list-cargo' },
+  { label: 'Oficina', url: 'list-oficina' }
 ];

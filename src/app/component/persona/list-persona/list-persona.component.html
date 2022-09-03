@@ -1,11 +1,12 @@
 <div class="card">
     <div class="card-header">
-  
+
      <a  *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-persona/">Agregar nuevo persona</a>
     </div>
     <div class="card-body">
       <h2>Lista persona 🧐</h2>
-      <table class="table">
+      <table class="table" id="season-tble" >
+      
         <thead>
           <tr>
             <th>Codigo</th>
@@ -37,8 +38,11 @@
               <a  *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deletepersona(persona.id_persona,iControl)" role="button">Borrar</a> 
             </td>
           </tr>
+          
         </tbody>
+        
       </table>
+      
   
   </div>
-  
+  <a  class="btn btn-info" (click)="exportToExcel()" >Exportar a excel</a>

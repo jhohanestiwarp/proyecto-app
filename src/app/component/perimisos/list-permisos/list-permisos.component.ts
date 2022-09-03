@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetPermissionService } from 'src/app/service/getPermissions.service';
 import { permisosService } from 'src/app/service/permisos.service';
-
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-list-permisos',
@@ -37,5 +37,14 @@ export class ListpermisosComponent implements OnInit {
       });
     }
   }
+  name = 'ExcelSheet.xlsx';
+  exportToExcel(): void {
+    let element = document.getElementById('season-tble');
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+    XLSX.writeFile(book, this.name);
+  }
 }
