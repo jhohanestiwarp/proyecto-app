@@ -1,5 +1,5 @@
 export const menuData = [
- 
+
   { label: 'Prueba', url: '/list-prueba' },
   { label: 'Tipo Documento', url: '/list-tipo_documento' },
   { label: 'Secretaria', url: '/list-secretaria' },

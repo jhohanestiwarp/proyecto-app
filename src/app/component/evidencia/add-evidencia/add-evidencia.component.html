@@ -11,22 +11,24 @@
        <!-- <h1 class="for">objeto</h1> -->
        <input required type="text"
        class="form-control" name="" id="" formControlName="descripcion" aria-describedby="helpId" placeholder="Ingrece la descripcion">
+       <input required type="file"
+       class="form-control" name="" id="" (change)="seledImage($event)" aria-describedby="helpId" placeholder="Ingrece la descripcion">
        <input required type="date"
        class="form-control" name="" id="" formControlName="fecha_cargue" aria-describedby="helpId" placeholder="Ingrece el año de contrato">
        <input required type="text"
        class="form-control" name="" id="" formControlName="estado" aria-describedby="helpId" placeholder="Escribe el cdp">
        
 
-       <select  class="form-control" formControlName="id_actividades_contrato">
-          <option>Selecionar actividades de contrato</option>
+       <select  class="form-select" formControlName="id_actividades_contrato">
+          <option selected>Selecionar actividades de contrato</option>
           <option *ngFor="let item of listActividadContrato" [value]="item.id_actividades_contrato">
             {{item.nombre_actividad}}
           </option>
         </select>
 
         
-       <select  class="form-control" formControlName="id_prueba">
-          <option>Selecionar Prueba</option>
+       <select  class="form-select" formControlName="id_prueba">
+          <option selected>Selecionar Prueba</option>
           <option *ngFor="let item of listPrueba" [value]="item.id_prueba">
             {{item.prueba}}
 
@@ -34,8 +36,8 @@
         </select>
 
           
-       <select  class="form-control" formControlName="id_persona_carga">
-          <option>Selecionar persona carga</option>
+       <select  class="form-select" formControlName="id_persona_carga">
+          <option selected>Selecionar persona carga</option>
           <option *ngFor="let item of ListPersonaCarga" [value]="item.id_persona_carga">
             {{item.carga}}
           </option>
