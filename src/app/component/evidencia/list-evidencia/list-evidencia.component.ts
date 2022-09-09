@@ -4,6 +4,11 @@ import { GetPermissionService } from 'src/app/service/getPermissions.service';
 import * as XLSX from 'xlsx';
 
 
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+
 @Component({
   selector: 'app-list-evidencia',
   templateUrl: './list-evidencia.component.html',
@@ -32,6 +37,21 @@ export class ListevidenciaComponent implements OnInit {
   ngOnInit(): void {
     this.evidenciaService.Listevidencia().subscribe(result =>{this.evidencias = result
   });
+}
+
+createPDF(){
+ 
+  const pdfDefinition: any = {
+    content: [
+      {
+        text: 'Hola mundo',
+      }
+    ]
+  }
+
+  const pdf = pdfMake.createPdf(pdfDefinition);
+  pdf.open();
+
 }
 
   deleteevidencia(id:any, iControl:any){
